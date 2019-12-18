@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="846.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ai_project_one.ReadDataController">
+   <children>
+      <TabPane prefHeight="685.0" prefWidth="846.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Read Projects">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="627.0" prefWidth="797.0">
+                     <children>
+                        <TextField fx:id="projectsPath" editable="false" layoutX="124.0" layoutY="26.0" prefHeight="25.0" prefWidth="360.0" />
+                        <Label layoutX="31.0" layoutY="29.0" text="Projects Path" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="projectsPathButton" layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#getProjectsPath" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #17202A;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" smooth="false">
+                                 <image>
+                                    <Image url="@Photos/Browse.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="readProjectsButton" layoutX="650.0" layoutY="20.0" mnemonicParsing="false" onAction="#ReadProjects" prefHeight="40.0" prefWidth="160.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Read Data?" />
+                        <TableView fx:id="ProjectsTable" layoutX="15.0" layoutY="70.0" prefHeight="566.0" prefWidth="821.0">
+                          <columns>
+                            <TableColumn fx:id="ProjectNameInTable" minWidth="0.0" prefWidth="96.7999849319458" text="Name" />
+                              <TableColumn fx:id="StudentsInTable" minWidth="0.0" prefWidth="213.59996032714844" text="Students" />
+                              <TableColumn fx:id="SupervisorInTable" prefWidth="109.60003662109375" text="Supervisor" />
+                              <TableColumn fx:id="ProjectTopicsInTable" prefWidth="213.60003662109375" text="Topics" />
+                              <TableColumn fx:id="PrefTimeInTable" prefWidth="91.20001220703125" text="Preferred Time" />
+                              <TableColumn fx:id="IntersetInTable" prefWidth="99.9998779296875" text="Interest in" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Read Examiners">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="675.0">
+                     <children>
+                        <TextField fx:id="ExaminersPath" editable="false" layoutX="124.0" layoutY="26.0" prefHeight="25.0" prefWidth="360.0" />
+                        <Label layoutX="14.0" layoutY="29.0" text="Examiners Path" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ExaminersPathButton" layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#getExaminersPath" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #17202A;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" smooth="false">
+                                 <image>
+                                    <Image url="@Photos/Browse.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <TableView fx:id="ExaminersTable" layoutX="15.0" layoutY="70.0" prefHeight="570.0" prefWidth="818.0">
+                          <columns>
+                            <TableColumn fx:id="ExaminerNameInTable" prefWidth="152.7999849319458" text="Examiner Name" />
+                            <TableColumn fx:id="preferredTopicsInTable" prefWidth="569.6000213623047" text="Preferred Topics" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="readExaminersButton" layoutX="650.0" layoutY="20.0" mnemonicParsing="false" onAction="#ReadExaminers" prefHeight="40.0" prefWidth="160.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Read Data?" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Set Examiners For Project">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="650.0" layoutY="20.0" mnemonicParsing="false" onAction="#makeDistribution" prefHeight="40.0" prefWidth="160.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Make Distrubution" />
+                        <TextArea fx:id="textArea" layoutX="21.0" layoutY="75.0" prefHeight="551.0" prefWidth="810.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Distribute to Time Slots">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="logoutButton" layoutX="430.0" layoutY="-1.0" mnemonicParsing="false" onAction="#makeLogout" prefHeight="656.0" prefWidth="418.0" stylesheets="@MyCss2.css" text="Exit ..?" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="31.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueButton" layoutX="-2.0" layoutY="1.0" mnemonicParsing="false" onAction="#makeContinue" prefHeight="654.0" prefWidth="432.0" stylesheets="@MyCss1.css" text="Continue ..?">
+                           <font>
+                              <Font name="Times New Roman" size="36.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="846.0" style="-fx-background-color: #17202A;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ai_project_one.DistributionToTimeSlotsController">
+   <children>
+      <TabPane prefHeight="685.0" prefWidth="846.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Populations Generator">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="675.0">
+                     <children>
+                        <Label layoutX="31.0" layoutY="29.0" text="Population Size" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="generatePopulationsButton" layoutX="462.0" layoutY="19.0" mnemonicParsing="false" onAction="#generatePopulations" prefHeight="38.0" prefWidth="318.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Generate Populations">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font></Button>
+                        <ChoiceBox fx:id="populationSizeBox" layoutX="191.0" layoutY="26.0" prefWidth="150.0" />
+                        <TextArea fx:id="chromosomeDataTextArea" layoutX="19.0" layoutY="102.0" prefHeight="534.0" prefWidth="809.0" />
+                        <Label fx:id="firstChromosomeLabel" layoutX="31.0" layoutY="68.0" text="Follwing is the first chromosome:" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Fitness Score">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="675.0">
+                     <children>
+                        <TextArea fx:id="fitnessScoreTextArea" layoutX="14.0" layoutY="65.0" prefHeight="566.0" prefWidth="826.0" />
+                        <Button fx:id="CalculateFitnessScoreButton" layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#CalculateFitnessScore" prefHeight="38.0" prefWidth="472.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Calculate Fitness Score For Old and New Generations">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font></Button>
+                        <Label layoutX="14.0" layoutY="23.0" text="Number of generations" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numberOfGenerationsButton" alignment="CENTER" layoutX="180.0" layoutY="16.0" prefHeight="33.0" prefWidth="109.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Results">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="daysBox" layoutX="96.0" layoutY="79.0" prefHeight="25.0" prefWidth="114.0" />
+                        <ChoiceBox fx:id="timeBox" layoutX="343.0" layoutY="79.0" prefHeight="25.0" prefWidth="113.0" />
+                        <Button fx:id="FinalButton" layoutX="501.0" layoutY="65.0" mnemonicParsing="false" onAction="#doFinal" prefHeight="51.0" prefWidth="191.0" style="-fx-background-radius: 20;" stylesheets="@MyCss3.css" text="Show Distributions" />
+                        <Label layoutX="37.0" layoutY="82.0" text="Day" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="281.0" layoutY="82.0" text="Time" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="room1Area" layoutX="17.0" layoutY="191.0" prefHeight="160.0" prefWidth="250.0" />
+                        <TextArea fx:id="room2Area" layoutX="17.0" layoutY="451.0" prefHeight="160.0" prefWidth="250.0" />
+                        <TextArea fx:id="room3Area" layoutX="288.0" layoutY="453.0" prefHeight="160.0" prefWidth="250.0" />
+                        <TextArea fx:id="room5Area" layoutX="555.0" layoutY="191.0" prefHeight="160.0" prefWidth="250.0" />
+                        <TextArea fx:id="room4Area" layoutX="557.0" layoutY="452.0" prefHeight="160.0" prefWidth="250.0" />
+                        <Label layoutX="111.0" layoutY="172.0" text="Room1" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="111.0" layoutY="431.0" text="Room2" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="386.0" layoutY="434.0" text="Room3" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="668.0" layoutY="431.0" text="Room4" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="668.0" layoutY="172.0" text="Room5" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="16.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Exit">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="logoutButton" layoutX="298.0" layoutY="264.0" mnemonicParsing="false" onAction="#makeLogout" prefHeight="126.0" prefWidth="250.0" style="-fx-background-radius: 20;" stylesheets="@MyCss2.css" text="Logout" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

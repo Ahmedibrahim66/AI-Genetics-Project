@@ -1,0 +1,9 @@
+.button {
+     -fx-background-color: #1976d2;
+     -fx-text-fill: white;
+}
+
+/*Raised button example */
+.button:hover {
+    -fx-background-color: #008000 ;
+}
